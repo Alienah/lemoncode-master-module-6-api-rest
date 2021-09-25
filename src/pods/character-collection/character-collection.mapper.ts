@@ -1,9 +1,9 @@
-import * as apiModel from './api/hotel-collection.api-model';
-import * as viewModel from './hotel-collection.vm';
+import * as apiModel from './api/character-collection.api-model';
+import * as viewModel from './character-collection.vm';
 
 export const mapFromApiToVm = (
-  hotel: apiModel.HotelEntityApi
-): viewModel.HotelEntityVm => ({
+  hotel: apiModel.CharacterEntityApi
+): viewModel.CharacterEntityVm => ({
   id: hotel.id,
   picture: `${process.env.BASE_PICTURES_URL}/${hotel.thumbNailUrl}`,
   name: hotel.name,
