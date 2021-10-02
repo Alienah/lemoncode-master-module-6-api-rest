@@ -12,19 +12,9 @@ export const CharacterCollectionContainer = () => {
     loadCharacterCollection();
   }, []);
 
-  const handleCreateCharacter = () => {
-    history.push(linkRoutes.createCharacter);
-  };
-
-  const handleEdit = (id: number) => {
-    history.push(linkRoutes.editCharacter(id.toString()));
-  };
-
   return (
     <CharacterCollectionComponent
       characterCollection={characterCollection}
-      onCreateCharacter={handleCreateCharacter}
-      onEdit={handleEdit}
     />
   );
 };

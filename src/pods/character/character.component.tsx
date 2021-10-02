@@ -1,50 +1,77 @@
 import React from 'react';
-import { Formik, Form } from 'formik';
 import {
-  TextFieldComponent,
-  SelectComponent,
-  RatingComponent,
-} from 'common/components';
-import { Button } from '@material-ui/core';
-import { formValidation } from './character.validations';
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Typography,
+} from '@material-ui/core';
 import { Character } from './character.vm';
 import * as classes from './character.styles';
-import { Lookup } from 'common/models';
 
 interface Props {
   character: Character;
-  cities: Lookup[];
-  onSave: (character: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character, cities, onSave } = props;
+  const { character } = props;
 
   return (
-    <Formik
-      onSubmit={onSave}
-      initialValues={character}
-      enableReinitialize={true}
-      validate={formValidation.validateForm}
-    >
-      {() => (
-        <Form className={classes.root}>
-          <TextFieldComponent name="name" label="Name" />
-          <TextFieldComponent name="address" label="Address" />
-          <RatingComponent name="rating" max={5} />
-          <SelectComponent name="city" label="City" items={cities} />
-          <TextFieldComponent
-            name="description"
-            label="Description"
-            multiline={true}
-            rows={3}
-            rowsMax={5}
+    <Card className={classes.root}>
+      <CardActionArea>
+        {character.image &&
+          <CardMedia
+            className={classes.media}
+            image={character.image}
+            title={character.name}
           />
-          <Button type="submit" variant="contained" color="primary">
-            Save
-          </Button>
-        </Form>
-      )}
-    </Formik>
+        }
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {character.name}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.item}
+          >
+            <span className={classes.label}>Id:</span> {character.id}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.item}
+          >
+            <span className={classes.label}>Location:</span> {character.location}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.item}
+          >
+            <span className={classes.label}>Status:</span> {character.status}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.item}
+          >
+            <span className={classes.label}>Gender:</span> {character.gender}
+          </Typography>
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            component="p"
+            className={classes.item}
+          >
+            <span className={classes.label}>Species:</span> {character.species}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
   );
 };

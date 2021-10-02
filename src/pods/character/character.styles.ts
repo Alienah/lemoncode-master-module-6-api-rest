@@ -1,7 +1,20 @@
 import { css } from 'emotion';
 
 export const root = css`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 345px;
+  margin: auto;
+`;
+
+export const media = css`
+  height: 300px;
+`;
+
+export const item = css`
+  margin-bottom: '4px';
+`;
+
+export const label = css`
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 4px;
 `;
