@@ -18,3 +18,7 @@ export const label = css`
   text-transform: uppercase;
   margin-right: 4px;
 `;
+
+export const list = css`
+  margin-top: 8px;
+`;

@@ -70,6 +70,21 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           >
             <span className={classes.label}>Species:</span> {character.species}
           </Typography>
+          {character.bestSentences.length > 0 &&
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.item}
+            >
+              <span className={classes.label}>Best sentences:</span>
+              <ul className={classes.list}>
+                {character.bestSentences.map((sentence, index) => (
+                  <li key={index} >"{sentence}"</li>
+                ))}
+              </ul>
+            </Typography>
+          }
         </CardContent>
       </CardActionArea>
     </Card>

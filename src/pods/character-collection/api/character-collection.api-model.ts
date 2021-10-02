@@ -1,6 +1,7 @@
 export interface CharacterEntityApi {
   id: number;
   name: string;
+  bestSentences: string[],
   status: string;
   species: string;
   type: string;

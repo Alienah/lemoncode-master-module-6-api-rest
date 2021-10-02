@@ -3,6 +3,9 @@
     {
       "id": 1,
       "name": "Rick Sanchez",
+      "bestSentences": [
+        "An initial sentence"
+      ],
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -65,6 +68,7 @@
     {
       "id": 2,
       "name": "Morty Smith",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -127,6 +131,7 @@
     {
       "id": 3,
       "name": "Summer Smith",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -181,6 +186,7 @@
     {
       "id": 4,
       "name": "Beth Smith",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -235,6 +241,7 @@
     {
       "id": 5,
       "name": "Jerry Smith",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -285,6 +292,7 @@
     {
       "id": 6,
       "name": "Abadango Cluster Princess",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Alien",
       "type": "",
@@ -307,6 +315,7 @@
     {
       "id": 7,
       "name": "Abradolf Lincler",
+      "bestSentences": [],
       "status": "unknown",
       "species": "Human",
       "type": "Genetic experiment",
@@ -330,6 +339,7 @@
     {
       "id": 8,
       "name": "Adjudicator Rick",
+      "bestSentences": [],
       "status": "Dead",
       "species": "Human",
       "type": "",
@@ -352,6 +362,7 @@
     {
       "id": 9,
       "name": "Agency Director",
+      "bestSentences": [],
       "status": "Dead",
       "species": "Human",
       "type": "",
@@ -374,6 +385,7 @@
     {
       "id": 10,
       "name": "Alan Rails",
+      "bestSentences": [],
       "status": "Dead",
       "species": "Human",
       "type": "Superhuman (Ghost trains summoner)",
@@ -396,6 +408,7 @@
     {
       "id": 11,
       "name": "Albert Einstein",
+      "bestSentences": [],
       "status": "Dead",
       "species": "Human",
       "type": "",
@@ -418,6 +431,7 @@
     {
       "id": 12,
       "name": "Alexander",
+      "bestSentences": [],
       "status": "Dead",
       "species": "Human",
       "type": "",
@@ -440,6 +454,7 @@
     {
       "id": 13,
       "name": "Alien Googah",
+      "bestSentences": [],
       "status": "unknown",
       "species": "Alien",
       "type": "",
@@ -462,6 +477,7 @@
     {
       "id": 14,
       "name": "Alien Morty",
+      "bestSentences": [],
       "status": "unknown",
       "species": "Alien",
       "type": "",
@@ -484,6 +500,7 @@
     {
       "id": 15,
       "name": "Alien Rick",
+      "bestSentences": [],
       "status": "unknown",
       "species": "Alien",
       "type": "",
@@ -506,6 +523,7 @@
     {
       "id": 16,
       "name": "Amish Cyborg",
+      "bestSentences": [],
       "status": "Dead",
       "species": "Alien",
       "type": "Parasite",
@@ -528,6 +546,7 @@
     {
       "id": 17,
       "name": "Annie",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Human",
       "type": "",
@@ -550,6 +569,7 @@
     {
       "id": 18,
       "name": "Antenna Morty",
+      "bestSentences": [],
       "status": "Alive",
       "species": "Human",
       "type": "Human with antennae",
@@ -573,6 +593,7 @@
     {
       "id": 19,
       "name": "Antenna Rick",
+      "bestSentences": [],
       "status": "unknown",
       "species": "Human",
       "type": "Human with antennae",
@@ -595,6 +616,7 @@
     {
       "id": 20,
       "name": "Ants in my Eyes Johnson",
+      "bestSentences": [],
       "status": "unknown",
       "species": "Human",
       "type": "Human with ants in his eyes",
