@@ -9,44 +9,39 @@ import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar/Avatar';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
 import { CharacterEntityVm } from '../character-collection.vm';
 import * as classes from './character-card.styles';
 
 interface Props {
   character: CharacterEntityVm;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
+  onEdit: (id: number) => void;
 }
 
 export const CharacterCard: React.FunctionComponent<Props> = (props) => {
-  const { character, onEdit, onDelete } = props;
+  const { character, onEdit } = props;
 
   return (
     <Card>
       <CardHeader
-        avatar={<Avatar aria-label="Character">{character.rating}</Avatar>}
+        avatar={<Avatar aria-label="Character">{character.name?.charAt(0) }</Avatar>}
         title={character.name}
-        subheader={character.address}
+        subheader={character.species}
       />
       <CardContent>
         <div className={classes.content}>
           <CardMedia
-            image={character.picture}
+            image={character.image}
             title={character.name}
             style={{ height: 0, paddingTop: '56.25%' }}
           />
           <Typography variant="subtitle1" gutterBottom>
-            {character.description}
+            {character.status}
           </Typography>
         </div>
       </CardContent>
       <CardActions>
         <IconButton onClick={() => onEdit(character.id)}>
           <EditIcon />
-        </IconButton>
-        <IconButton onClick={() => onDelete(character.id)}>
-          <DeleteIcon />
         </IconButton>
       </CardActions>
     </Card>
