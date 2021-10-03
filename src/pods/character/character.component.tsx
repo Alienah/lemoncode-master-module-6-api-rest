@@ -13,14 +13,15 @@ import { CharacterForm } from './components';
 
 interface Props {
   character: Character;
+  onCharacterFormSave: (values: Character) => void;
 }
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
-  const { character } = props;
+  const { character, onCharacterFormSave } = props;
   const [editing, setEditing] = React.useState(false);
 
   const onSave = (values) => {
-    console.log('vvvvvv', values)
+    onCharacterFormSave(values);
     setEditing(false);
   }
 

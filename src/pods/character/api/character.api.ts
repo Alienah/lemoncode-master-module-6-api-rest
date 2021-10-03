@@ -10,5 +10,10 @@ export const getCharacter = async (id: string): Promise<Character> => {
 };
 
 export const saveCharacter = async (character: Character): Promise<boolean> => {
+  if (character.id) {
+    await Axios.put<Character>(`${URL}/${character.id}`, character);
+  } else {
+    await Axios.post<Character>(URL, character);
+  }
   return true;
 };
