@@ -1,8 +1,12 @@
+import { theme } from 'core/theme';
 import { css } from 'emotion';
 
 export const root = css`
-  max-width: 345px;
+  max-width: 768px;
   margin: auto;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;
 
 export const media = css`
@@ -20,5 +24,20 @@ export const label = css`
 `;
 
 export const list = css`
-  margin-top: 8px;
+  margin-top: ${theme.spacing(1)}px;
+  list-style: none;
+  padding-left: 0;
+
+  & li {
+    height: 36px;
+    margin-bottom: 4px;
+  }
+`;
+
+export const editButton = css`
+  margin-top: ${theme.spacing(5)}px;
+`;
+
+export const buttonText = css`
+  margin-right: ${theme.spacing(1)}px;
 `;

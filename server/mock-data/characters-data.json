@@ -4,7 +4,8 @@
       "id": 1,
       "name": "Rick Sanchez",
       "bestSentences": [
-        "An initial sentence"
+        "An initial sentence",
+        "Other sentence"
       ],
       "status": "Alive",
       "species": "Human",
