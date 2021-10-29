@@ -1,10 +1,25 @@
+import { gql } from 'graphql-request';
+import { graphQLClient } from 'core/api';
 import { CharacterEntityApi } from './character-collection.api-model';
-import Axios from 'axios';
 
-const URL = `https://rickandmortyapi.com/api/character`;
+interface GetCharacterCollectionResponse {
+  characters: CharacterEntityApi[];
+}
 
 export const getCharacterCollection = async (): Promise<CharacterEntityApi[]> => {
-  const { data } = await Axios.get(URL);
-  return data.results || [];
+  const query = gql`
+    query {
+      characters {
+        id
+        name
+        status
+        species
+        gender
+        image
+      }
+    }
+  `;
+  const { characters } = await graphQLClient.request<GetCharacterCollectionResponse>(query);
+  return characters;
 };
 
