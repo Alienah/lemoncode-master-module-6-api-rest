@@ -10,8 +10,6 @@ import { switchRoutes } from 'core/router';
 export const CharacterContainer: React.FunctionComponent = (props) => {
   const [character, setCharacter] = React.useState<Character>(createEmptyCharacter());
   const { id } = useParams<{ id: string }>();
-  console.log('id', id)
-  const history = useHistory();
 
   const handleLoadCharacter = async () => {
     const apiCharacter = await api.getCharacter(id);
