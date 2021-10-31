@@ -18,7 +18,8 @@ interface Props {
 
 export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
   const { character, onCharacterFormSave } = props;
-  const [editing, setEditing] = React.useState(false);
+  const { locationName } = character?.location || {};
+  const [ editing, setEditing ] = React.useState(false);
 
   const onSave = (values) => {
     onCharacterFormSave(values);
@@ -56,7 +57,7 @@ export const CharacterComponent: React.FunctionComponent<Props> = (props) => {
           component="p"
           className={classes.item}
         >
-          <span className={classes.label}>Location:</span> {character.location}
+          <span className={classes.label}>Location:</span> {locationName}
         </Typography>
         <Typography
           variant="body2"

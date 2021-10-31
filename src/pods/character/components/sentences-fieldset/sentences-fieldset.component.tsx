@@ -8,12 +8,15 @@ import { TextFieldComponent } from 'common/components';
 import { FieldArrayRenderProps } from 'formik';
 
 interface Props {
+  autoFocus: boolean;
   arrayHelpers: FieldArrayRenderProps;
   values: Character;
 }
 
 export const SentencesFieldset: React.FunctionComponent<Props> = (props) => {
-  const { arrayHelpers, values } = props;
+  const { autoFocus, arrayHelpers, values } = props;
+
+  console.log(arrayHelpers, values)
 
   return (
     <fieldset className={classes.fieldset}>
@@ -27,6 +30,7 @@ export const SentencesFieldset: React.FunctionComponent<Props> = (props) => {
                 className={classes.inputContainer}
               >
                 <TextFieldComponent
+                  autoFocus={autoFocus}
                   id={`bestSentences.${index}`}
                   className={classes.input}
                   name={`bestSentences.${index}`}

@@ -1,6 +1,5 @@
 import Axios from 'axios';
 import { Character } from './character.api-model';
-import { Lookup } from 'common/models';
 
 const URL = '/api/characters';
 

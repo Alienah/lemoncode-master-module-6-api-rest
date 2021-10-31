@@ -14,6 +14,7 @@ interface Props {
 
 export const CharacterForm: React.FunctionComponent<Props>  = (props) => {
   const {character, onSave, onCancel} = props;
+  const [addingNew, setAddingNew] = React.useState(false)
   return (
     <Formik
       onSubmit={onSave}
@@ -28,14 +29,17 @@ export const CharacterForm: React.FunctionComponent<Props>  = (props) => {
               render={(arrayHelpers) => (
                 <div>
                   <SentencesFieldset
+                    autoFocus={addingNew}
                     values={values}
                     arrayHelpers={arrayHelpers}
                   />
                   <IconButton
                     type="button"
                     edge="start"
-                    onClick={() =>
-                      arrayHelpers.insert(values.bestSentences.length || 0, '')
+                    onClick={() => {
+                        arrayHelpers.insert(values.bestSentences.length || 0, '');
+                        setAddingNew(true);
+                      }
                     }
                   >
                     <AddIcon />
