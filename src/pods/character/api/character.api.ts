@@ -1,14 +1,27 @@
-import Axios from 'axios';
+import { gql } from 'graphql-request';
+import { graphQLClient } from 'core/api';
 import { Character } from './character.api-model';
-import { Lookup } from 'common/models';
 
-const URL = `https://rickandmortyapi.com/api/character`;
+interface GetCharacterResponse {
+  character: Character;
+}
 
 export const getCharacter = async (id: string): Promise<Character> => {
-  const { data } = await Axios.get(`${URL}/${id}`);
-  return data || null;
-};
-
-export const saveCharacter = async (character: Character): Promise<boolean> => {
-  return true;
+  const query = gql`
+    query {
+      character(id: "${id}") {
+        id
+        name
+        status
+        gender
+        species
+        image
+        location {
+          name
+        }
+      }
+    }
+  `;
+  const { character } = await graphQLClient.request<GetCharacterResponse>(query);
+  return character;
 };
