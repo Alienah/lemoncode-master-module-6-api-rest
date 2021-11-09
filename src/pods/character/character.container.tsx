@@ -10,10 +10,16 @@ import { switchRoutes } from 'core/router';
 export const CharacterContainer: React.FunctionComponent = () => {
   const [ character, setCharacter ] = React.useState<Character>(createEmptyCharacter());
   const { id } = useParams<{ id: string }>();
+  const characterExists = character.name;
 
   const handleLoadCharacter = async () => {
-    const apiCharacter = await api.getCharacter(id);
-    setCharacter(mapCharacterFromApiToVm(apiCharacter));
+    try {
+      const apiCharacter = await api.getCharacter(id);
+      setCharacter(mapCharacterFromApiToVm(apiCharacter));
+    } catch (error) {
+      setCharacter(createEmptyCharacter());
+      console.log(`Error trying to get character with id ${id}: `, error);
+    }
   };
 
   React.useEffect(() => {
@@ -35,7 +41,10 @@ export const CharacterContainer: React.FunctionComponent = () => {
   return (
     <>
       <BackLink text="Back to character list" link={switchRoutes.characterCollection} />
-      <CharacterComponent character={character} onCharacterFormSave={handleSave}/>
+      { characterExists
+        ? <CharacterComponent character={character} onCharacterFormSave={handleSave}/>
+        : <div>We couldn't find the character 😟. Please try with another one</div>
+      }
     </>
   )
 };

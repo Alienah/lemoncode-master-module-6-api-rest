@@ -33,3 +33,29 @@ export const mapCharacterFromVmToApi = (char: viewModel.Character): apiModel.Cha
     },
     image: char.image
   } as unknown) as apiModel.Character);
+
+  export interface EmptyCharacter {
+    id: string;
+    name: string;
+    species: string,
+    status: string,
+    gender: string,
+    location: {
+      locationName: string,
+      locationUrl: string,
+    },
+    image: string
+  }
+
+  export const createEmptyCharacter = (): EmptyCharacter => ({
+    id: '',
+    name: '',
+    species: '',
+    status: '',
+    gender: '',
+    location: {
+      locationName: '',
+      locationUrl: '',
+    },
+    image: ''
+  });
