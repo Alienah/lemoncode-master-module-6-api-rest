@@ -12,8 +12,13 @@ export const CharacterContainer: React.FunctionComponent = (props) => {
   const { id } = useParams<{ id: string }>();
 
   const handleLoadCharacter = async () => {
-    const apiCharacter = await api.getCharacter(id);
-    setCharacter(mapCharacterFromApiToVm(apiCharacter));
+    try {
+      const apiCharacter = await api.getCharacter(id);
+      setCharacter(mapCharacterFromApiToVm(apiCharacter));
+    } catch (error) {
+      setCharacter(createEmptyCharacter());
+      console.log(`Error trying to get character with id ${id}: `, error);
+    }
   };
 
   React.useEffect(() => {
